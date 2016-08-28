@@ -23,25 +23,21 @@ public class LecturaFicheros {
     public ArrayList leerArchivo(String nombreArchivo){
         
         
-         File fichero = new File(nombreArchivo);
+         // Fichero del que queremos leer
+		File fichero = new File(nombreArchivo);
 		Scanner s = null;
-                try {
+
+		try {
 			// Leemos el contenido del fichero
 			System.out.println("... Leemos el contenido del fichero ...");
 			s = new Scanner(fichero);
 
 			// Leemos linea a linea el fichero
 			while (s.hasNextLine()) {
-				String linea = s.nextLine(); 	// Guardamos la linea en un Stringç
-                                //char[] arrayCaracteres;
-                                //arrayCaracteres = linea.toCharArray();// cpnvertimos la linea a una arreglo de caracteres
-                                //ArrayList<char[]> temp = matriz;
-                                matriz.add(linea);// agregamos el arreglo a un arraylist
-                                
-                                
+				String linea = s.nextLine(); 	// Guardamos la linea en un String
+                                matriz.add(linea);
 				System.out.println(linea);      // Imprimimos la linea
 			}
-                        
 
 		} catch (Exception ex) {
 			System.out.println("Mensaje: " + ex.getMessage());
@@ -54,6 +50,7 @@ public class LecturaFicheros {
 				System.out.println("Mensaje 2: " + ex2.getMessage());
 			}
 		}
+	
         
                 
                 

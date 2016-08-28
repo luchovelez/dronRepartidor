@@ -76,7 +76,7 @@ public class DronesRepartidores {
     public void cargarRutas(String archivo){
         
         ArrayList leerArchivo = lector.leerArchivo(archivo);
-        System.out.println(leerArchivo.get(0)); 
+        //System.out.println(leerArchivo.get(0)); 
         
         
     }
