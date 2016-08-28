@@ -76,6 +76,7 @@ public class DronesRepartidores {
     public void cargarRutas(String archivo){
         
         ArrayList leerArchivo = lector.leerArchivo(archivo);
+       
         //System.out.println(leerArchivo.get(0)); 
         
         
@@ -95,6 +96,7 @@ public class DronesRepartidores {
         // TODO code application logic here
         DronesRepartidores dron = new DronesRepartidores();
         dron.cargarRutas("E:\\Documents\\NetBeansProjects\\dronesRepartidores\\src\\dronesrepartidores\\in.txt");
+        
         
         
         
