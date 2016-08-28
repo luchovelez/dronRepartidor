@@ -11,16 +11,20 @@ package dronesrepartidores;
  */
 import java.io.FileWriter;
 public class EscrituraFicheros {
-
-	public static void main(String[] args) {
-
-		String[] lineas = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "..." };
-
-		/** FORMA 1 DE ESCRITURA **/
-		FileWriter fichero = null;
+    
+    public EscrituraFicheros(){
+        
+    }
+    
+    
+    public void crearArchivo(String[] texto,String nombre){
+        
+        
+        
+        FileWriter fichero = null;
 		try {
-
-			fichero = new FileWriter("fichero_escritura.txt");
+                        String[] lineas = texto;
+			fichero = new FileWriter(nombre);
 
 			// Escribimos linea a linea en el fichero
 			for (String linea : lineas) {
@@ -32,5 +36,14 @@ public class EscrituraFicheros {
 		} catch (Exception ex) {
 			System.out.println("Mensaje de la excepción: " + ex.getMessage());
 		}
-	}
+        
+    }
+
+	//public static void main(String[] args) {
+
+		//String[] lineas = { "Uno", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "..." };
+
+		/** FORMA 1 DE ESCRITURA **/
+		
+	//}
 }

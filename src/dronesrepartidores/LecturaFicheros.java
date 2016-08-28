@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LecturaFicheros {
     
     private String nombreArchivo;
-    private ArrayList<String> matriz;
+    private List<String> matriz;
     
     
     
@@ -25,15 +27,19 @@ public class LecturaFicheros {
 	}
     
     
-    public ArrayList leerArchivo(String nombreArchivo){
+    public List leerArchivo(String nombreArchivo){
         
         
         String fileName = nombreArchivo;
-
+        List<String> listarutas = null;
+        
 		//read file into stream, try-with-resources
 		try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
-
-			stream.forEach(System.out::println);
+                        
+                     
+                        //stream.map(s -> s.substring(1));
+			listarutas=stream.collect(Collectors.toList());
+                        
 //             matriz.add(stream.toString());
 
 		} catch (IOException e) {
@@ -43,7 +49,7 @@ public class LecturaFicheros {
 	
 
 	
-        
+        matriz=listarutas;
                 
                 
         return matriz;
@@ -59,7 +65,7 @@ public class LecturaFicheros {
         this.nombreArchivo = nombreArchivo;
     }
 
-    public ArrayList<String> getMatriz() {
+    public List<String> getMatriz() {
         return matriz;
     }
 
